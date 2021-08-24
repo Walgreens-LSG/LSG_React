@@ -18,6 +18,14 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
+## Launch Storybook
+
+Simply run this command in the terminal
+
+```
+yarn storybook
+```
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
@@ -33,10 +41,12 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-## Launch Storybook
+## Storybook Build
 
-Simply run this command in the terminal
-
+Builds of Storybook for deployment are created using either the commands:
 ```
-yarn storybook
+yarn build-storybook
+# or
+npm run build-storybook
 ```
+The static files must be saved in the a folder title '/docs' for GitHub pages deployment.
