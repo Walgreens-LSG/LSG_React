@@ -8,8 +8,8 @@ import { render } from "react-dom";
 //export const WagAccordion = ({ children, ...props }) => {
 export const WagAccordion = ({ 
   children,
-  allowMultiple,
-  allowToggle,
+  //allowMultiple,
+  //allowToggle,
   ...props 
 }) => {
     const KIND = {};
@@ -144,6 +144,6 @@ WagAccordion.defaultProps = {
    //kind: "default",
   // onClick: undefined,
   // fullWidth: false,
-  allowMultiple: undefined,
-  allowToggle: undefined,
+  //allowMultiple: undefined,
+  //allowToggle: undefined,
 };

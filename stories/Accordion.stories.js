@@ -79,8 +79,8 @@ export const Default = Template.bind({});
 Default.args = {
   description:
     "Information alert. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et tortor.",
-  allowMultiple: false,
-  allowToggle: false,
+  allowMultiple: undefined,
+  allowToggle: undefined,
   label: 'Lorem Ipsum'
 };
 
@@ -123,7 +123,9 @@ export const Standard = () => (
 );
 
 export const Multiple_Expanded = () => (
-  <WagAccordion allowMultiple>
+  <WagAccordion 
+    allowMultiple
+  >
     <WagAccordionItem>
       <h2>
         <AccordionButton>
@@ -161,7 +163,9 @@ export const Multiple_Expanded = () => (
 );
 
 export const Toggle_Enabled = () => (
-  <WagAccordion allowToggle>
+  <WagAccordion 
+    allowToggle
+  >
     <WagAccordionItem>
       <h2>
         <AccordionButton>
