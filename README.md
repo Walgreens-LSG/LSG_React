@@ -49,4 +49,6 @@ yarn build-storybook
 # or
 npm run build-storybook
 ```
-The static files must be saved in the a folder title '/docs' for GitHub pages deployment.
+The static files must be saved in the a folder title '/docs' for GitHub pages deployment. 
+
+Be sure to remove the existing '/docs' folder and replace it with the newly generated '/storybook-static'.
