@@ -22,6 +22,7 @@ export const WagAccordion = ({
       margin-bottom: 12px;
       font-weight: bold;
     }
+    
     padding: 0 20px;
     border-radius: 45px;
     font-family: ${WagType.type.primary};
@@ -32,18 +33,30 @@ export const WagAccordion = ({
     &::after{
       border-color: ${color.stroke};
     }
-
-    button:active{
+    button[aria-expanded="true"]{
       color: ${color.typegray};
-      background: ${color.white};
     }
-    button:hover{
+    button[aria-expanded="false"]{
+      color: ${color.denim};
+    }
+    button:visited{
       color: ${color.typegray};
       background: ${color.white};
     }
     button:focus{
       color:${color.typegray};
     }
+    button:hover{
+      color: ${color.typegray};
+      background: ${color.white};
+    }
+    button:active{
+      color: ${color.typegray};
+      background: ${color.white};
+    }
+   
+    
+    
 
     
     
@@ -54,17 +67,7 @@ export const WagAccordion = ({
     }
  
   `;
-  function standardAccordion() {
-    //allowToggle: true
-    return (
-      <WagAccordion
-        {...props}
-      >
-        {children}
-      </WagAccordion>
-    );
-  };
-
+  
  return (
   <WagAccordion
         {...props}
@@ -72,8 +75,7 @@ export const WagAccordion = ({
         {children}
       </WagAccordion>
  );
-
-  
+ 
 }
 
 
