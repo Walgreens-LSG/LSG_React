@@ -14,19 +14,7 @@ export default {
   title: "Components/AlertMinimal",
   component: WagAlertMinimal,
   subcomponent: { WagAlertDescription },
-  argTypes: {
-    
-    // backgroundColor: { control: 'color' },
-    // kind: { control: { type: 'radio' } }
-    // icon: {
-    //   options: ["info", "success", "error"],
-    //   mapping: {
-    //     info: <WagInfoIcon />,
-    //     success: <WagCheckCircleIcon />,
-    //     error: <WagAlertIcon />,
-    //   },
-    // },
-  },
+  
 };
 
 //👇 We create a “template” of how args map to rendering
@@ -44,7 +32,7 @@ const Template = (args) => (
     ) : null}
     {args.dismissable ? (
       <CloseButton position="absolute" right="8px" top="8px" size="sm" />
-    ) : null}
+    ) : null }
   </WagAlertMinimal>
 );
 export const Default = Template.bind({});

@@ -83,7 +83,7 @@ WagAlert.propTypes = {
    */
   // backgroundColor: PropTypes.string,
   /**
-   * What type of alert are you using?
+   * What kind of alert are you using?
    */
   kind: PropTypes.oneOf(["error", "warning", "success", "info"]),
   /**
@@ -104,7 +104,7 @@ WagAlert.propTypes = {
    */
   // hasIcon: PropTypes.bool,
   /**
-   * Is the button disabled?
+   * Is the alert dismissable?
    */
   dismissable: PropTypes.bool,
 
