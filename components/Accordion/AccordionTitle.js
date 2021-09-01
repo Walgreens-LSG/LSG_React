@@ -1,12 +1,14 @@
 import React from "react";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
+import { AccordionIcon, AccordionButton } from "@chakra-ui/react";
 export const WagAccordionTitle = ({ children, ...props }) => {
   // const WagAccordionTitle = styled`
   //   width: 100%;
   // `;
 
   return <WagAccordionTitle {...props}>{children}</WagAccordionTitle>;
+
 };
 
 WagAccordionTitle.propTypes = {
