@@ -1,37 +1,89 @@
 import React from "react";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
-import { Accordion } from "@chakra-ui/react";
-import { color, transition } from "../../assets/shared/variables.js";
-export const WagAccordion = ({ children, ...props }) => {
+import { Accordion, typography } from "@chakra-ui/react";
+import { color, typography as WagType, transition } from "../../assets/shared/variables.js";
+import { render } from "react-dom";
+
+//export const WagAccordion = ({ children, ...props }) => {
+export const WagAccordion = ({ 
+  children,
+  //allowMultiple,
+  //allowToggle,
+  ...props 
+}) => {
+    const KIND = {};
+    
   const WagAccordion = styled(Accordion)`
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
+    h2, h3, h4, h5, h6 {
       width: 100%;
+      color: ${color.denim};
+      margin-top: 12px;
+      margin-bottom: 12px;
+      font-weight: bold;
     }
-    /* transition: ${transition.speed.ms3};
-    height: 44px;
+    
     padding: 0 20px;
     border-radius: 45px;
-    background: ${color.navy};
-    color: white;
+    font-family: ${WagType.type.primary};
 
-    &:active {
-      transform: scale(0.8);
-      box-shadow: 0 3px 0 rgba(0, 0, 0, 0);
+    &::before{
+      border-color: ${color.stroke};
+    }
+    &::after{
+      border-color: ${color.stroke};
+    }
+    button[aria-expanded="true"]{
+      color: ${color.typegray};
+    }
+    button[aria-expanded="false"]{
+      color: ${color.denim};
+    }
+    button:visited{
+      color: ${color.typegray};
+      background: ${color.white};
+    }
+    button:focus{
+      color:${color.typegray};
+    }
+    button:hover{
+      color: ${color.typegray};
+      background: ${color.white};
+    }
+    button:active{
+      color: ${color.typegray};
+      background: ${color.white};
+    }
+   
+    
+    
+
+    
+    
     }
     &[disabled] {
       opacity: 0.5;
       pointer-events: none;
     }
- */
+ 
   `;
+  
+ return (
+  <WagAccordion
+        {...props}
+      >
+        {children}
+      </WagAccordion>
+ );
+ 
+}
 
-  return <WagAccordion {...props}>{children}</WagAccordion>;
-};
+
+
+
+
+
+
 
 // Potential option for exporting button kinds as separate components
 // export const WagButtonSecondary = () => {
@@ -53,9 +105,9 @@ WagAccordion.propTypes = {
    */
   // backgroundColor: PropTypes.string,
   /**
-   * What type of button are you using?
+   * What type of accordion are you using?
    */
-  // kind: PropTypes.oneOf(["primary", "secondary", "outline", "link"]),
+  // kind: PropTypes.oneOf(["default"]),
   /**
    * Button contents
    */
@@ -65,8 +117,13 @@ WagAccordion.propTypes = {
    */
   // onClick: PropTypes.func,
   /**
-   * Full Width
+   * Any expanded item may collapse again.
    */
+  allowToggle: PropTypes.bool,
+  /**
+   * Will permit multiple items to be expanded at once.
+   */
+  allowMultiple: PropTypes.bool,
   // isFullWidth: PropTypes.bool,
   // isDisabled: PropTypes.bool,
   /**
@@ -84,9 +141,9 @@ WagAccordion.propTypes = {
 };
 WagAccordion.defaultProps = {
   // backgroundColor: color.navy,
-  // kind: "primary",
+   //kind: "default",
   // onClick: undefined,
   // fullWidth: false,
-  // isDisabled: false,
-  // isLoading: false,
+  //allowMultiple: undefined,
+  //allowToggle: undefined,
 };
