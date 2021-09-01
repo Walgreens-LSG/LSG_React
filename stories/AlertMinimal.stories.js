@@ -15,6 +15,7 @@ export default {
   component: WagAlertMinimal,
   subcomponent: { WagAlertDescription },
   argTypes: {
+    
     // backgroundColor: { control: 'color' },
     // kind: { control: { type: 'radio' } }
     // icon: {
@@ -86,7 +87,6 @@ export const Error = () => (
       et tortor.
       <WagLinkCta ml={2}>Check out</WagLinkCta>
     </WagAlertDescription>
-    {/* <CloseButton position="absolute" right="8px" top="8px" size="sm" /> */}
   </WagAlertMinimal>
 );
 
