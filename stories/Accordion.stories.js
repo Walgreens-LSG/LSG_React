@@ -84,44 +84,6 @@ Default.args = {
   label: 'Lorem Ipsum'
 };
 
-export const Standard = () => (
-  <WagAccordion>
-    <WagAccordionItem>
-      <h2>
-        <AccordionButton>
-          <Box flex="1" textAlign="left">
-           <strong>Section 1 title</strong> 
-          </Box>
-          <AccordionIcon />
-        </AccordionButton>
-      </h2>
-      <AccordionPanel pb={4}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat.
-      </AccordionPanel>
-    </WagAccordionItem>
-
-    <WagAccordionItem>
-      <h2>
-        <AccordionButton>
-          <Box flex="1" textAlign="left">
-            <strong>Section 2 title</strong>
-          </Box>
-          <AccordionIcon />
-        </AccordionButton>
-      </h2>
-      <AccordionPanel pb={4}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat.
-      </AccordionPanel>
-    </WagAccordionItem>
-  </WagAccordion>
-);
-
 export const Multiple_Expanded = () => (
   <WagAccordion 
     allowMultiple
