@@ -82,7 +82,7 @@ WagAlertMinimal.propTypes = {
    */
   // backgroundColor: PropTypes.string,
   /**
-   * What type of alert are you using?
+   * What kind of alert are you using?
    */
   kind: PropTypes.oneOf(["error", "warning", "success", "info"]),
   /**
@@ -103,7 +103,7 @@ WagAlertMinimal.propTypes = {
    */
   // hasIcon: PropTypes.bool,
   /**
-   * Is the button disabled?
+   * Is the alert dismissable?
    */
   dismissable: PropTypes.bool,
 
@@ -114,10 +114,6 @@ WagAlertMinimal.propTypes = {
 };
 
 WagAlertMinimal.defaultProps = {
-  // backgroundColor: color.navy,
   kind: "info",
-  // onClick: undefined,
-  // fullWidth: false,
   dismissable: false,
-  // isLoading: false,
 };
