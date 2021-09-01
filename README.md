@@ -52,3 +52,19 @@ npm run build-storybook
 The static files must be saved in the a folder title '/docs' for GitHub pages deployment. 
 
 Be sure to remove the existing '/docs' folder and replace it with the newly generated '/storybook-static'.
+
+## Branch Naming Conventions
+___Please make branch names descriptive___
+
+When adding or enhancing an existing component, name your branch the following :
+```
+feature/Component_Name_And_Or_Enhancement_Description
+```
+Please generate new builds of storybook in a seperate branch and name them as follows:
+```
+build/Component_Name_Or_Update_Build
+```
+Branches dedicated to bug fixes should be titled:
+```
+fix/Bug_Description
+```
