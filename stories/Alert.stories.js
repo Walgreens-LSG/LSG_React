@@ -3,7 +3,7 @@ import { WagInfoIcon } from "../components/Icons/Info";
 import { WagCheckCircleIcon } from "../components/Icons/CheckCircle";
 import { WagAlertIcon } from "../components/Icons/Alert";
 import { WagLinkCta } from "../components/Link/LinkCTA";
-import { AlertDescription, CloseButton } from "@chakra-ui/react";
+//import { AlertDescription, CloseButton } from "@chakra-ui/react";
 import React from "react";
 
 import { WagAlert } from "../components/Alert/Alert";
