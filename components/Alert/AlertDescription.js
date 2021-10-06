@@ -5,5 +5,12 @@ import { AlertDescription } from "@chakra-ui/react";
 export const WagAlertDescription = ({ children, ...props }) => {
   const WagAlertDescription = styled(AlertDescription)``;
 
-  return <WagAlertDescription {...props}>{children}</WagAlertDescription>;
+  return (
+    <WagAlertDescription 
+      {...props}
+      ml={2}
+    >
+      {children}
+    </WagAlertDescription>
+  );
 };

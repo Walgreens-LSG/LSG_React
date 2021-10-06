@@ -24,7 +24,10 @@ export const WagLinkCta = ({ children, ...props }) => {
   `;
 
   return (
-    <WagLinkCta {...props}>
+    <WagLinkCta 
+      {...props}
+      ml={2}
+    >
       <strong>{children}</strong>
       <WagArrowRightIcon />
     </WagLinkCta>

@@ -8,6 +8,7 @@ import React from "react";
 
 import { WagAlert } from "../components/Alert/Alert";
 import { WagAlertDescription } from "../components/Alert/AlertDescription";
+import { WagCloseButton } from "../components/Alert/AlertCloseButton";
 
 //👇 This default export determines where your story goes in the story list
 export default {
@@ -30,19 +31,21 @@ export default {
 
 //👇 We create a “template” of how args map to rendering
 const Template = (args) => (
-  <WagAlert kind={args.kind} padding={4}>
+  <WagAlert 
+    kind={args.kind} 
+  >
     {args.kind === "info" ? <WagInfoIcon /> : null}
     {args.kind === "success" ? <WagCheckCircleIcon /> : null}
     {args.kind === "error" ? <WagAlertIcon /> : null}
     {args.kind === "warning" ? <WagAlertIcon /> : null}
     {args.Description ? (
-      <WagAlertDescription ml={2}>
+      <WagAlertDescription>
         {args.Description}
-        {args.linkText ? <WagLinkCta ml={2}>{args.linkText}</WagLinkCta> : null}
+        {args.linkText ? <WagLinkCta>{args.linkText}</WagLinkCta> : null}
       </WagAlertDescription>
     ) : null}
     {args.dismissable ? (
-      <CloseButton position="absolute" right="8px" top="8px" size="sm" />
+      <WagCloseButton  />
     ) : null}
   </WagAlert>
 );
@@ -56,48 +59,48 @@ Default.args = {
 };
 
 export const Info = () => (
-  <WagAlert kind="info" padding={4} dismissable>
+  <WagAlert kind="info"  >
     <WagInfoIcon />
-    <WagAlertDescription ml={2}>
+    <WagAlertDescription>
       Information alert. Lorem ipsum dolor sit amet, consectetur adipiscing
       elit. Duis et tortor.
-      <WagLinkCta ml={2}>Refill Now</WagLinkCta>
+      <WagLinkCta >Refill Now</WagLinkCta>
     </WagAlertDescription>
   </WagAlert>
 );
 
 export const Success = () => (
-  <WagAlert kind="success" padding={4}>
+  <WagAlert kind="success" >
     <WagCheckCircleIcon />
-    <WagAlertDescription ml={2}>
+    <WagAlertDescription>
       Success Alert. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       Duis et tortor.
-      <WagLinkCta ml={2}>Check out</WagLinkCta>
+      <WagLinkCta>Check out</WagLinkCta>
     </WagAlertDescription>
-    <CloseButton position="absolute" right="8px" top="8px" size="sm" />
+    <WagCloseButton />
   </WagAlert>
 );
 
 export const Error = () => (
-  <WagAlert kind="error" padding={4}>
+  <WagAlert kind="error" >
     <WagAlertIcon />
-    <WagAlertDescription ml={2}>
+    <WagAlertDescription>
       Error Alert. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
       et tortor.
-      <WagLinkCta ml={2}>Check out</WagLinkCta>
+      <WagLinkCta>Check out</WagLinkCta>
     </WagAlertDescription>
     {/* <CloseButton position="absolute" right="8px" top="8px" size="sm" /> */}
   </WagAlert>
 );
 
 export const Warning = () => (
-  <WagAlert kind="warning" padding={4}>
+  <WagAlert kind="warning">
     <WagAlertIcon />
-    <WagAlertDescription ml={2}>
+    <WagAlertDescription>
       Warning Alert. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       Duis et tortor.
-      <WagLinkCta ml={2}>Check out</WagLinkCta>
+      <WagLinkCta>Check out</WagLinkCta>
     </WagAlertDescription>
-    <CloseButton position="absolute" right="8px" top="8px" size="sm" />
+    <WagCloseButton />
   </WagAlert>
 );
