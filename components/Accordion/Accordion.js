@@ -5,7 +5,7 @@ import { Accordion, typography } from "@chakra-ui/react";
 import { color, typography as WagType, transition } from "../../assets/shared/variables.js";
 import { render } from "react-dom";
 
-//export const WagAccordion = ({ children, ...props }) => {
+
 export const WagAccordion = ({ 
   children,
   //allowMultiple,

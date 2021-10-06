@@ -13,8 +13,9 @@ import {
 
 import { WagAccordion } from "../components/Accordion/Accordion";
 import { WagAccordionItem } from "../components/Accordion/AccordionItem";
-import { WagAccordionTitle } from "../components/Accordion/AccordionTitle";
-//import { WagAccordionButton } from "../components/Accordion/AccordionButton";
+import { WagAccordionTitle } from "../components/Accordion/WagAccordionTitle";
+import { WagAccordionButton } from "../components/Accordion/AccordionButton"; // may be absolted once i introduce accordion title
+import { WagAccordionPanel } from "../components/Accordion/AccordionPanel";
 
 
 //👇 This default export determines where your story goes in the story list
@@ -39,39 +40,41 @@ export default {
 //👇 We create a “template” of how args map to rendering
 const Template = (args) => (
   <WagAccordion>
+
     <WagAccordionItem>
       <h2>
-        <AccordionButton>
-          <Box flex="1" textAlign="left">
-           <strong>{args.label}</strong> 
-          </Box>
-          <AccordionIcon />
-        </AccordionButton>
+        <WagAccordionButton>
+          {args.label}
+        </WagAccordionButton>
       </h2>
-      <AccordionPanel pb={4}>{args.description}</AccordionPanel>
+      <WagAccordionPanel >
+        {args.description}
+      </WagAccordionPanel>
     </WagAccordionItem>
+
+    {/* example separation */}
     <WagAccordionItem>
       <h2>
-        <AccordionButton>
-          <Box flex="1" textAlign="left">
-            <strong>{args.label}</strong>
-          </Box>
-          <AccordionIcon />
-        </AccordionButton>
+        <WagAccordionButton>
+          {args.label}
+        </WagAccordionButton>
       </h2>
-      <AccordionPanel pb={4}>{args.description}</AccordionPanel>
+      <WagAccordionPanel >
+        {args.description}
+      </WagAccordionPanel>
     </WagAccordionItem>
+
     <WagAccordionItem>
       <h2>
-        <AccordionButton>
-          <Box flex="1" textAlign="left">
-            <strong>{args.label}</strong>
-          </Box>
-          <AccordionIcon />
-        </AccordionButton>
+        <WagAccordionButton>
+          {args.label}
+        </WagAccordionButton>
       </h2>
-      <AccordionPanel pb={4}>{args.description}</AccordionPanel>
+      <WagAccordionPanel >
+        {args.description}
+      </WagAccordionPanel>
     </WagAccordionItem>
+
   </WagAccordion>
 );
  
@@ -90,36 +93,30 @@ export const Multiple_Expanded = () => (
   >
     <WagAccordionItem>
       <h2>
-        <AccordionButton>
-          <Box flex="1" textAlign="left">
-          <strong>Section 1 title</strong>
-          </Box>
-          <AccordionIcon />
-        </AccordionButton>
+        <WagAccordionButton>
+          Section 1 title
+        </WagAccordionButton>
       </h2>
-      <AccordionPanel pb={4}>
+      <WagAccordionPanel>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
         commodo consequat.
-      </AccordionPanel>
+      </WagAccordionPanel>
     </WagAccordionItem>
 
     <WagAccordionItem>
       <h2>
-        <AccordionButton>
-          <Box flex="1" textAlign="left">
-          <strong>Section 2 title</strong>
-          </Box>
-          <AccordionIcon />
-        </AccordionButton>
+        <WagAccordionButton>
+          Section 2 title
+        </WagAccordionButton>
       </h2>
-      <AccordionPanel pb={4}>
+      <WagAccordionPanel>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
         commodo consequat.
-      </AccordionPanel>
+      </WagAccordionPanel>
     </WagAccordionItem>
   </WagAccordion>
 );
@@ -130,36 +127,30 @@ export const Toggle_Enabled = () => (
   >
     <WagAccordionItem>
       <h2>
-        <AccordionButton>
-          <Box flex="1" textAlign="left">
-          <strong>Section 1 title</strong>
-          </Box>
-          <AccordionIcon />
-        </AccordionButton>
+        <WagAccordionButton>
+          Section 1 title
+        </WagAccordionButton>
       </h2>
-      <AccordionPanel pb={4}>
+      <WagAccordionPanel>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
         commodo consequat.
-      </AccordionPanel>
+      </WagAccordionPanel>
     </WagAccordionItem>
 
     <WagAccordionItem>
       <h2>
-        <AccordionButton>
-          <Box flex="1" textAlign="left">
-          <strong>Section 2 title</strong>
-          </Box>
-          <AccordionIcon />
-        </AccordionButton>
+        <WagAccordionButton>
+          Section 2 title
+        </WagAccordionButton>
       </h2>
-      <AccordionPanel pb={4}>
+      <WagAccordionPanel>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
         commodo consequat.
-      </AccordionPanel>
+      </WagAccordionPanel>
     </WagAccordionItem>
   </WagAccordion>
 );
