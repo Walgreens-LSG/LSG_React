@@ -8,11 +8,15 @@ import { render } from "react-dom";
 
 export const WagAccordion = ({ 
   children,
+  kind,
   //allowMultiple,
   //allowToggle,
   ...props 
 }) => {
-    const KIND = {};
+    const KIND = {
+      AllowMuliple: "allowMultiple",
+      AllowToggle: "allowToggle",
+    };
     
   const WagAccordion = styled(Accordion)`
     h2, h3, h4, h5, h6 {
@@ -69,15 +73,19 @@ export const WagAccordion = ({
   `;
   
  return (
-  <WagAccordion
+      <WagAccordion
         {...props}
+        
       >
         {children}
       </WagAccordion>
+
+      //
+      //{kind:"AllowToggle" ? <WagAccordion allowToggle {...props}>{children} </WagAccordion> : null}
  );
+
  
 }
-
 
 
 
@@ -107,7 +115,7 @@ WagAccordion.propTypes = {
   /**
    * What type of accordion are you using?
    */
-  // kind: PropTypes.oneOf(["default"]),
+   kind: PropTypes.oneOf(["AllowToggle", "AllowMultiple", "Default"]),
   /**
    * Button contents
    */
@@ -119,11 +127,11 @@ WagAccordion.propTypes = {
   /**
    * Any expanded item may collapse again.
    */
-  allowToggle: PropTypes.bool,
+  //allowToggle: PropTypes.bool,
   /**
    * Will permit multiple items to be expanded at once.
    */
-  allowMultiple: PropTypes.bool,
+  //allowMultiple: PropTypes.bool,
   // isFullWidth: PropTypes.bool,
   // isDisabled: PropTypes.bool,
   /**
@@ -141,7 +149,7 @@ WagAccordion.propTypes = {
 };
 WagAccordion.defaultProps = {
   // backgroundColor: color.navy,
-   //kind: "default",
+   kind: "Default",
   // onClick: undefined,
   // fullWidth: false,
   //allowMultiple: undefined,
