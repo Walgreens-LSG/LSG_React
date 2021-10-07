@@ -2,86 +2,97 @@ import { propNames } from "@chakra-ui/react";
 import { WagInfoIcon } from "../components/Icons/Info";
 import React from "react";
 
-import {
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon,
-  Box,
-} from "@chakra-ui/react";
 
 import { WagAccordion } from "../components/Accordion/Accordion";
 import { WagAccordionItem } from "../components/Accordion/AccordionItem";
-import { WagAccordionTitle } from "../components/Accordion/AccordionTitle";
-//import { WagAccordionButton } from "../components/Accordion/AccordionButton";
+import { WagAccordionTitle } from "../components/Accordion/WagAccordionTitle";
+import { WagAccordionButton } from "../components/Accordion/AccordionButton"; // may be absolted once i introduce accordion title
+import { WagAccordionPanel } from "../components/Accordion/AccordionPanel";
 
 
 //👇 This default export determines where your story goes in the story list
 export default {
   title: "Components/Accordion",
   component: WagAccordion,
-  // subcomponent: { WagAccordionDescription },
-  // argTypes: {
-  //   backgroundColor: { control: 'color' },
-  //   kind: { control: { type: 'radio' } },
-  //   icon: {
-  //     options: ["info", "success", "error"],
-  //     mapping: {
-  //       info: <WagInfoIcon />,
-  //       success: <WagCheckCircleIcon />,
-  //       error: <WagAccordionIcon />,
-  //     },
-  //   },
-  // },
+  subcomponent: { WagAccordionItem },
+  argTypes: {
+    kind: {  
+      control: { 
+        type: 'radio',
+      } 
+    }
+  },
 };
 
 //👇 We create a “template” of how args map to rendering
 const Template = (args) => (
-  <WagAccordion>
-    <WagAccordionItem>
-      <h2>
-        <AccordionButton>
-          <Box flex="1" textAlign="left">
-           <strong>{args.label}</strong> 
-          </Box>
-          <AccordionIcon />
-        </AccordionButton>
-      </h2>
-      <AccordionPanel pb={4}>{args.description}</AccordionPanel>
-    </WagAccordionItem>
-    <WagAccordionItem>
-      <h2>
-        <AccordionButton>
-          <Box flex="1" textAlign="left">
-            <strong>{args.label}</strong>
-          </Box>
-          <AccordionIcon />
-        </AccordionButton>
-      </h2>
-      <AccordionPanel pb={4}>{args.description}</AccordionPanel>
-    </WagAccordionItem>
-    <WagAccordionItem>
-      <h2>
-        <AccordionButton>
-          <Box flex="1" textAlign="left">
-            <strong>{args.label}</strong>
-          </Box>
-          <AccordionIcon />
-        </AccordionButton>
-      </h2>
-      <AccordionPanel pb={4}>{args.description}</AccordionPanel>
-    </WagAccordionItem>
-  </WagAccordion>
+  
+  accordionGenerator(args)
+  
 );
+
+function accordionGenerator(args){
+
+  if(args.kind === "Default"){
+    return(
+      <WagAccordion
+      >
+      {accordionGuts(args)}
+      {accordionGuts(args)}
+      {accordionGuts(args)}
+  
+    </WagAccordion>
+    );
+  }
+  if(args.kind === "AllowToggle"){
+    return(
+      <WagAccordion
+        allowToggle
+      >
+      {accordionGuts(args)}
+      {accordionGuts(args)}
+      {accordionGuts(args)}
+  
+    </WagAccordion>
+    );
+  }
+  if(args.kind === "AllowMultiple"){
+    return(
+      <WagAccordion
+        allowMultiple
+      >
+      {accordionGuts(args)}
+      {accordionGuts(args)}
+      {accordionGuts(args)}
+  
+    </WagAccordion>
+    );
+  }
+  
+}
+
+function accordionGuts(args){
+  return(
+    <WagAccordionItem>
+      <h2>
+        <WagAccordionButton>
+          {args.label}
+        </WagAccordionButton>
+      </h2>
+      <WagAccordionPanel >
+        {args.panel}
+      </WagAccordionPanel>
+    </WagAccordionItem>
+     
+  );
+};
  
 export const Default = Template.bind({});
 Default.args = {
-  description:
-    "Information alert. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et tortor.",
-  allowMultiple: undefined,
-  allowToggle: undefined,
-  label: 'Lorem Ipsum'
+  panel:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  label: 'Lorem Ipsum',
+  kind: "Default"
 };
 
 export const Multiple_Expanded = () => (
@@ -90,36 +101,30 @@ export const Multiple_Expanded = () => (
   >
     <WagAccordionItem>
       <h2>
-        <AccordionButton>
-          <Box flex="1" textAlign="left">
-          <strong>Section 1 title</strong>
-          </Box>
-          <AccordionIcon />
-        </AccordionButton>
+        <WagAccordionButton>
+          Section 1 title
+        </WagAccordionButton>
       </h2>
-      <AccordionPanel pb={4}>
+      <WagAccordionPanel>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
         commodo consequat.
-      </AccordionPanel>
+      </WagAccordionPanel>
     </WagAccordionItem>
 
     <WagAccordionItem>
       <h2>
-        <AccordionButton>
-          <Box flex="1" textAlign="left">
-          <strong>Section 2 title</strong>
-          </Box>
-          <AccordionIcon />
-        </AccordionButton>
+        <WagAccordionButton>
+          Section 2 title
+        </WagAccordionButton>
       </h2>
-      <AccordionPanel pb={4}>
+      <WagAccordionPanel>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
         commodo consequat.
-      </AccordionPanel>
+      </WagAccordionPanel>
     </WagAccordionItem>
   </WagAccordion>
 );
@@ -130,36 +135,30 @@ export const Toggle_Enabled = () => (
   >
     <WagAccordionItem>
       <h2>
-        <AccordionButton>
-          <Box flex="1" textAlign="left">
-          <strong>Section 1 title</strong>
-          </Box>
-          <AccordionIcon />
-        </AccordionButton>
+        <WagAccordionButton>
+          Section 1 title
+        </WagAccordionButton>
       </h2>
-      <AccordionPanel pb={4}>
+      <WagAccordionPanel>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
         commodo consequat.
-      </AccordionPanel>
+      </WagAccordionPanel>
     </WagAccordionItem>
 
     <WagAccordionItem>
       <h2>
-        <AccordionButton>
-          <Box flex="1" textAlign="left">
-          <strong>Section 2 title</strong>
-          </Box>
-          <AccordionIcon />
-        </AccordionButton>
+        <WagAccordionButton>
+          Section 2 title
+        </WagAccordionButton>
       </h2>
-      <AccordionPanel pb={4}>
+      <WagAccordionPanel>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
         commodo consequat.
-      </AccordionPanel>
+      </WagAccordionPanel>
     </WagAccordionItem>
   </WagAccordion>
 );

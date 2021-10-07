@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
-import { AccordionIcon, AccordionButton } from "@chakra-ui/react";
+import {  AccordionButton } from "@chakra-ui/react";
+import { WagBox } from "../Box/Box.js";
+import { WagAccordionIcon } from "../Accordion/AccordionIcon.js";
 
 export const WagAccordionButton = ({ 
   children, 
@@ -12,13 +14,13 @@ export const WagAccordionButton = ({
     <WagAccordionButton 
       {...props}
     >
-      <Box 
+      <WagBox 
         flex="1"
         textAlign="left"
       >
         <strong>{children}</strong>
-      </Box>
-      <AccordionIcon/>
+      </WagBox>
+      <WagAccordionIcon/>
     </WagAccordionButton>
   );
 };

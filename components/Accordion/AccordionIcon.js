@@ -1,17 +1,20 @@
 import React from "react";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
-import { AccordionIcon, AccordionButton } from "@chakra-ui/react";
-export const WagAccordionTitle = ({ children, ...props }) => {
-  // const WagAccordionTitle = styled`
-  //   width: 100%;
-  // `;
+import { 
+  AccordionIcon 
+} from "@chakra-ui/react";
 
-  return <WagAccordionTitle {...props}>{children}</WagAccordionTitle>;
+export const WagAccordionIcon = ({ 
 
+}) => {
+  const WagAccordionIcon = styled(AccordionIcon)``;
+  return (
+      <WagAccordionIcon/>
+  );
 };
 
-WagAccordionTitle.propTypes = {
+WagAccordionIcon.propTypes = {
   /**
    * Is this the principal call to action on the page?
    */
@@ -50,7 +53,7 @@ WagAccordionTitle.propTypes = {
    */
   // isLoading: PropTypes.bool,
 };
-WagAccordionTitle.defaultProps = {
+WagAccordionIcon.defaultProps = {
   // backgroundColor: color.navy,
   // kind: "primary",
   // onClick: undefined,

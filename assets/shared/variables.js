@@ -46,6 +46,14 @@ export const color = {
   black: "#000000",
 };
 
+export const alertColors = {
+  // Alerts
+  green:"#00853E",
+  red: color.red,
+  yellow: "#fff284",
+  yellowAA: "#bc5724",
+};
+
 export const transition = {
   speed: {
     ms3: "all 300ms ease-in-out",

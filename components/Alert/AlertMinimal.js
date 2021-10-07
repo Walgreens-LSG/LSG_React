@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 import { WagInfoIcon } from "../Icons/Icons";
 import { Alert, CloseButton } from "@chakra-ui/react";
-import { color, spacing } from "../../assets/shared/variables.js";
+import { color, alertColors, spacing } from "../../assets/shared/variables.js";
 export const WagAlertMinimal = ({
   kind,
   icon,
@@ -41,17 +41,17 @@ export const WagAlertMinimal = ({
     ${(props) =>
       props.kind === KIND.ERROR &&
       `
-      color: ${color.red};
+      color: ${alertColors.red};
     `}
     ${(props) =>
       props.kind === KIND.WARNING &&
       `
-      color: ${color.warningAA};
+      color: ${alertColors.yellowAA};
     `}
     ${(props) =>
       props.kind === KIND.SUCCESS &&
       `
-      color: ${color.green};
+      color: ${alertColors.green};
     `}
     ${(props) =>
       props.kind === KIND.INFO &&
@@ -64,8 +64,9 @@ export const WagAlertMinimal = ({
     <WagAlertMinimal
       kind={kind}
       padding={padding}
-      dismissable={dismissable}
+      //dismissable={dismissable}
       {...props}
+      padding={4}
     >
       {children}
     </WagAlertMinimal>
@@ -115,5 +116,5 @@ WagAlertMinimal.propTypes = {
 
 WagAlertMinimal.defaultProps = {
   kind: "info",
-  dismissable: false,
+  dismissable: true,
 };

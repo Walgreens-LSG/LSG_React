@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 import { WagInfoIcon } from "../Icons/Icons";
 import { Alert, CloseButton } from "@chakra-ui/react";
-import { color, spacing } from "../../assets/shared/variables.js";
+import { color, alertColors, spacing } from "../../assets/shared/variables.js";
 export const WagAlert = ({
   kind,
   icon,
@@ -41,18 +41,18 @@ export const WagAlert = ({
     ${(props) =>
       props.kind === KIND.ERROR &&
       `
-      background: ${color.red};
+      background: ${alertColors.red};
     `}
     ${(props) =>
       props.kind === KIND.WARNING &&
       `
-      background: ${color.yellow};
+      background: ${alertColors.yellow};
       color: ${color.typegray};
     `}
     ${(props) =>
       props.kind === KIND.SUCCESS &&
       `
-      background: ${color.green};
+      background: ${alertColors.green};
     `}
     ${(props) =>
       props.kind === KIND.INFO &&
@@ -65,8 +65,9 @@ export const WagAlert = ({
     <WagAlert
       kind={kind}
       padding={padding}
-      dismissable={dismissable}
+      //dismissable={dismissable}
       {...props}
+      padding={4}
     >
       {children}
     </WagAlert>

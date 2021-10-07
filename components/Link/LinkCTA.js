@@ -24,7 +24,10 @@ export const WagLinkCta = ({ children, ...props }) => {
   `;
 
   return (
-    <WagLinkCta {...props}>
+    <WagLinkCta 
+      {...props}
+      ml={2}
+    >
       <strong>{children}</strong>
       <WagArrowRightIcon />
     </WagLinkCta>
@@ -77,6 +80,6 @@ WagLinkCta.defaultProps = {
   kind: "info",
   // onClick: undefined,
   // fullWidth: false,
-  isDisabled: false,
+  isdisabled: "false",
   // isLoading: false,
 };
