@@ -87,6 +87,7 @@ export const typography = {
     bold: "700",
   },
   size: {
+    //original size tokens
     s1: "12",
     s2: "14",
     s3: "16",
@@ -97,7 +98,32 @@ export const typography = {
     l2: "40",
     l3: "48",
     code: "90",
+    //new size tokens
+    marketingLarge: "5rem",
+    marketingMedium: "4rem",
+    marketingSmall: "3rem",
+    marketingXSmall: "2.25rem",
+    headingLarge: "1.75rem",
+    headingMedium: "1.37rem",
+    headingSmall: "1.125rem",
+    paragraph: "1.125rem",
+    descriptor: "16px",
+    disclaimer: "14px",
+    priceLarge: "3.125rem",
+    priceMedium: "1.875rem",
+    priceSmall: "1rem",
+    //price <sup> tag sizes
+    priceLargeSup: "24px",
+    priceMediumSup: "1.125rem"
   },
+  lineHeight:{
+    marketing: "1.1",
+    marketingSmall: "1.2",
+    heading: "1.3",
+    paragraph: "1.78",
+    price: "0.7",
+    priceSmall: "1"
+  }
 };
 
 export const breakpoint = 600;
