@@ -80,6 +80,6 @@ WagLinkCta.defaultProps = {
   kind: "info",
   // onClick: undefined,
   // fullWidth: false,
-  isDisabled: false,
+  isdisabled: "false",
   // isLoading: false,
 };

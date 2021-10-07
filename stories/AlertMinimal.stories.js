@@ -46,7 +46,7 @@ Default.args = {
 };
 
 export const Info = () => (
-  <WagAlertMinimal kind="info" dismissable>
+  <WagAlertMinimal kind="info" >
     <WagInfoIcon />
     <WagAlertDescription >
       Information alert. Lorem ipsum dolor sit amet, consectetur adipiscing

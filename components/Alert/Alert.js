@@ -65,7 +65,7 @@ export const WagAlert = ({
     <WagAlert
       kind={kind}
       padding={padding}
-      dismissable={dismissable}
+      //dismissable={dismissable}
       {...props}
       padding={4}
     >

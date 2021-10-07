@@ -64,7 +64,7 @@ export const WagAlertMinimal = ({
     <WagAlertMinimal
       kind={kind}
       padding={padding}
-      dismissable={dismissable}
+      //dismissable={dismissable}
       {...props}
       padding={4}
     >
@@ -116,5 +116,5 @@ WagAlertMinimal.propTypes = {
 
 WagAlertMinimal.defaultProps = {
   kind: "info",
-  dismissable: false,
+  dismissable: true,
 };
