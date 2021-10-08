@@ -13,27 +13,52 @@ export const WagText = ({
 }) => {
     const KIND = {
       //Marketing Headings
-      MARKETINGLARGE: "MarketingLarge",
-      MARKETINGMEDIUM: "MarketingMedium",
-      MARKETINGSMALL: "MarketingSmall",
-      MARKETINGXSMALL: "MarketingXSmall",
+      MARKETINGLARGE: "marketingLarge",
+      MARKETINGMEDIUM: "marketingMedium",
+      MARKETINGSMALL: "marketingSmall",
+      MARKETINGXSMALL: "marketingXSmall",
       //Heading
-      HEADINGLARGE: "HeadingLarge",
-      HEADINGMEDIUM: "HeadingMedium",
-      HEADINGSMALL: "HeadingSmall",
+      HEADINGLARGE: "headingLarge",
+      HEADINGMEDIUM: "headingMedium",
+      HEADINGSMALL: "headingSmall",
       // General text
-      PARAGRAPH: "Paragraph",
-      DESCRIPTOR: "Descriptor",
-      DISCLAIMER: "Disclaimer",
+      PARAGRAPH: "paragraph",
+      DESCRIPTOR: "descriptor",
+      DISCLAIMER: "disclaimer",
       //Price
-      PRICELARGE: "PriceLarge",
-      PRICEMEDIUM: "PriceMedium",
-      PRICESMALL: "PriceSmall",
+      PRICELARGE: "priceLarge",
+      PRICEMEDIUM: "priceMedium",
+      PRICESMALL: "priceSmall",
+    };
+    const COLOR = {
+      //Primary
+      WAGRED: "walgreensRed",
+      CREAM : "cream",
+      NAVYBLUE : "navyBlue",
+      SKYBLUE: "skyBlue",
+      //Secondary
+      RUBY: 'ruby',
+      TEAL: 'teal',
+      DENIM: 'denim',
+      SIENNA: 'sienna',
+      LIGHTCREAM: 'lightCream',
+      // Seasonal
+      SEASONALRED: 'seasonalRed',
+      SEASONALGREEN: 'seasonalGreen',
+      SEASONALPINK: 'seasonalPink',
+      SEASONALORANGE: 'seasonalOrange',
+      VALUEYELLOW: 'valueYellow',
+      //Gray Scale
+      DISABLED: 'disabled',
+      GRAY: 'gray',
+      TEXTGRAY: 'textGray',
+      DARKGRAY: 'darkGray',
+      BLACK: 'black'
     };
     
   const WagText = styled(Text)`
     font-family: ${typography.type.primary};
-    color: ${color.typegray};
+    
     line-height: ${typography.lineHeight.marketing};
     
     ${(props)=> props.kind === KIND.MARKETINGLARGE &&
@@ -128,12 +153,89 @@ export const WagText = ({
         font-weight: ${typography.weight.regular};
         line-height: ${typography.lineHeight.priceSmall};
     `}
+    ${(props)=> props.color === COLOR.WAGRED && 
+    `
+      color: ${color.red};
+    `}
+    ${(props)=> props.color === COLOR.CREAM && 
+      `
+        color: ${color.cream};
+    `}
+    ${(props)=> props.color === COLOR.NAVYBLUE && 
+      `
+        color: ${color.navy};
+    `}
+    ${(props)=> props.color === COLOR.SKYBLUE && 
+      `
+        color: ${color.skyblue};
+    `}
+    ${(props)=> props.color === COLOR.RUBY && 
+      `
+        color: ${color.ruby};
+    `}
+    ${(props)=> props.color === COLOR.TEAL && 
+      `
+        color: ${color.teal};
+    `}
+    ${(props)=> props.color === COLOR.DENIM && 
+      `
+        color: ${color.denim};
+    `}
+    ${(props)=> props.color === COLOR.SIENNA && 
+      `
+        color: ${color.sienna};
+    `}
+    ${(props)=> props.color === COLOR.LIGHTCREAM && 
+      `
+        color: ${color.lightcream};
+    `}
+    ${(props)=> props.color === COLOR.SEASONALRED && 
+      `
+        color: ${color.holidayred};
+    `}
+    ${(props)=> props.color === COLOR.SEASONALGREEN && 
+      `
+        color: ${color.green};
+    `}
+    ${(props)=> props.color === COLOR.SEASONALPINK && 
+      `
+        color: ${color.pink};
+    `}
+    ${(props)=> props.color === COLOR.SEASONALORANGE && 
+      `
+        color: ${color.orange};
+    `}
+    ${(props)=> props.color === COLOR.VALUEYELLOW && 
+      `
+        color: ${color.yellow};
+    `}
+    ${(props)=> props.color === COLOR.DISABLED && 
+      `
+        color: ${color.disabledgray};
+    `}
+    ${(props)=> props.color === COLOR.GRAY && 
+      `
+        color: ${color.gray};
+    `}
+    ${(props)=> props.color === COLOR.TEXTGRAY && 
+      `
+        color: ${color.typegray};
+    `}
+    ${(props)=> props.color === COLOR.DARKGRAY && 
+      `
+        color: ${color.darkgray};
+    `}
+    ${(props)=> props.color === COLOR.BLACK && 
+      `
+        color: ${color.black};
+    `}
   `;
   
  return (
       <WagText
         {...props}
         kind={kind}
+        color={color}
       >
         {children}
       </WagText>
@@ -167,16 +269,23 @@ WagText.propTypes = {
    */
   // primary: PropTypes.bool,
   /**
-   * What background color to use
+   * What does your text say?
    */
-  // backgroundColor: PropTypes.string,
+   text: PropTypes.string,
   /**
    * What type of text are you using?
    */
-   kind: PropTypes.oneOf(["Default", "MarketingLarge", "MarketingMedium", 
-   "MarketingSmall", "MarketingXSmall", "HeadingLarge", "HeadingMedium",
-   "HeadingSmall", "Paragraph", "Descriptor", "Disclaimer", "PriceLarge",
-   "PriceMedium", "PriceSmall",]),
+   kind: PropTypes.oneOf(["default", "marketingLarge", "marketingMedium", 
+   "marketingSmall", "marketingXSmall", "headingLarge", "headingMedium",
+   "headingSmall", "paragraph", "descriptor", "disclaimer", "priceLarge",
+   "priceMedium", "priceSmall",]),
+   /**
+    * What type of color is your text
+    */
+   color: PropTypes.oneOf(["walgreensRed", "cream", "navyBlue", "skyBlue",
+   "ruby", "teal", "denim", "lightCream", "seasonalRed", "seasonalGreen",
+   "seasonalPink", "seasonalOrange", 'valueYellow', "disabled", "gray", 
+   "textGray", "darkGray", "black"]),
   /**
    * Button contents
    */
@@ -210,8 +319,9 @@ WagText.propTypes = {
 };
 WagText.defaultProps = {
   // backgroundColor: color.navy,
-   kind: "Default",
-  // onClick: undefined,
+   kind: "paragraph",
+   color: "textGray",
+   text: undefined,
   // fullWidth: false,
   //allowMultiple: undefined,
   //allowToggle: undefined,
