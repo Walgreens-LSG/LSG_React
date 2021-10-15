@@ -5,6 +5,7 @@ import React from "react";
 
 
 import { WagHeading } from "../components/Heading/Heading";
+import { Heading } from "@chakra-ui/react"
 
 
 //👇 This default export determines where your story goes in the story list
@@ -28,17 +29,18 @@ export default {
 
 //👇 We create a “template” of how args map to rendering
 const Template = (args) => (
-  <WagHeading
-    kind={args.kind}
-  >hi</WagHeading>
-  //textGenerator(args)
+  // <WagHeading
+  //   kind={args.kind}
+  // >hi</WagHeading>
+  textGenerator(args)
+  // <Heading> Go</Heading>
 );
 
 function textGenerator(args){
   // This function determines what variation of the
   //text will render based on text type
  
-  if(args.truncated){
+  if(args.truncated ){
     return(
       <WagHeading
         kind={args.kind}

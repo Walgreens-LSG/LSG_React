@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
-import { Heading } from "@chakra-ui/react";
+import { Heading, typography as Typography } from "@chakra-ui/react";
 import { color, typography, transition } from "../../assets/shared/variables.js";
 import { render } from "react-dom";
 
@@ -54,44 +54,44 @@ export const WagHeading = ({
     // text type
     ${(props)=> props.kind === KIND.MARKETINGLARGE &&
       `
-        font-size: ${typography.size.marketingLarge};
-        font-weight: ${typography.weight.bold};
+        font-size: ${typography.size.marketingLarge} !important;
+        font-weight: ${typography.weight.bold} !important;
     `}
     ${(props)=> props.kind === KIND.MARKETINGMEDIUM &&
       `
-        font-size: ${typography.size.marketingMedium};
-        font-weight: ${typography.weight.bold};
+        font-size: ${typography.size.marketingMedium} !important;
+        font-weight: ${typography.weight.bold} !important;
     `}
     ${(props)=> props.kind === KIND.MARKETINGSMALL &&
       `
-        font-size: ${typography.size.marketingSmall};
-        font-weight: ${typography.weight.bold};
+        font-size: ${typography.size.marketingSmall} !important;
+        font-weight: ${typography.weight.bold} !important;
     `}
     ${(props)=> props.kind === KIND.MARKETINGXSMALL &&
       `
-        font-size: ${typography.size.marketingXSmall};
-        font-weight: ${typography.weight.bold};
-        line-height: ${typography.lineHeight.marketingSmall};
+        font-size: ${typography.size.marketingXSmall} !important;
+        font-weight: ${typography.weight.bold} !important;
+        line-height: ${typography.lineHeight.marketingSmall} !important;
     `}
     ${(props)=> props.kind === KIND.HEADINGLARGE &&
       `
-        font-size: ${typography.size.headingLarge};
-        font-weight: ${typography.weight.bold};
-        line-height: ${typography.lineHeight.heading};
+        font-size: ${typography.size.headingLarge} !important;
+        font-weight: ${typography.weight.bold} !important;
+        line-height: ${typography.lineHeight.heading} !important;
     `}
     ${(props)=> props.kind === KIND.HEADINGMEDIUM &&
       `
-        font-size: ${typography.size.headingMedium};
-        font-weight: ${typography.weight.bold};
-        line-height: ${typography.lineHeight.heading};
+        font-size: ${typography.size.headingMedium} !important;
+        font-weight: ${typography.weight.bold} !important;
+        line-height: ${typography.lineHeight.heading} !important;
     `}
     ${(props)=> props.kind === KIND.HEADINGSMALL &&
       `
-        font-size: ${typography.size.headingSmall};
-        font-weight: ${typography.weight.bold};
-        line-height: ${typography.lineHeight.heading};
+        font-size: ${typography.size.headingSmall} !important;
+        font-weight: ${typography.weight.bold} !important;
+        line-height: ${typography.lineHeight.heading} !important;
     `}
-    
+
     //text colors
     ${(props)=> props.color === COLOR.WAGRED && 
     `
@@ -180,7 +180,6 @@ export const WagHeading = ({
       >
         {children}
       </WagHeading>
-
       //
       //{kind:"AllowToggle" ? <WagAccordion allowToggle {...props}>{children} </WagAccordion> : null}
  );
@@ -218,7 +217,7 @@ WagHeading.propTypes = {
    */
    kind: PropTypes.oneOf(["marketingLarge", "marketingMedium", 
    "marketingSmall", "marketingXSmall", "headingLarge", "headingMedium",
-   "headingSmall"]),
+   "headingSmall",]),
    /**
     * What color is your text
     */
@@ -266,8 +265,8 @@ WagHeading.defaultProps = {
   // backgroundColor: color.navy,
    kind: "marketingLarge",
    color: "textGray",
-   //text: "Add Text",
-   //element: null,
+   text: "Add Text",
+   element: null,
   //allowMultiple: undefined,
   //allowToggle: undefined,
 };
