@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
-import { Text, typography as Typography } from "@chakra-ui/react";
+import { Heading } from "@chakra-ui/react";
 import { color, typography, transition } from "../../assets/shared/variables.js";
 import { render } from "react-dom";
 
 
-export const WagText = ({ 
+export const WagHeading = ({ 
   children,
   kind,
   ...props 
@@ -21,14 +21,6 @@ export const WagText = ({
       HEADINGLARGE: "headingLarge",
       HEADINGMEDIUM: "headingMedium",
       HEADINGSMALL: "headingSmall",
-      // General text
-      PARAGRAPH: "paragraph",
-      DESCRIPTOR: "descriptor",
-      DISCLAIMER: "disclaimer",
-      //Price
-      PRICELARGE: "priceLarge",
-      PRICEMEDIUM: "priceMedium",
-      PRICESMALL: "priceSmall",
     };
     const COLOR = {
       //Primary
@@ -56,7 +48,7 @@ export const WagText = ({
       BLACK: 'black'
     };
     
-  const WagText = styled(Text)`
+  const WagHeading = styled(Heading)`
     font-family: ${typography.type.primary};   
     line-height: ${typography.lineHeight.marketing};
     // text type
@@ -99,59 +91,7 @@ export const WagText = ({
         font-weight: ${typography.weight.bold};
         line-height: ${typography.lineHeight.heading};
     `}
-    ${(props)=> props.kind === KIND.PARAGRAPH &&
-      `
-        font-size: ${typography.size.paragraph};
-        font-weight: ${typography.weight.regular};
-        line-height: ${typography.lineHeight.paragraph};
-    `}
-    ${(props)=> props.kind === KIND.DESCRIPTOR &&
-      `
-        font-size: ${typography.size.descriptor};
-        font-weight: ${typography.weight.regular};
-        line-height: ${typography.lineHeight.paragraph};
-    `}
-    ${(props)=> props.kind === KIND.DISCLAIMER &&
-      `
-        font-size: ${typography.size.disclaimer};
-        font-weight: ${typography.weight.regular};
-        line-height: ${typography.lineHeight.paragraph};
-    `}
-    ${(props)=> props.kind === KIND.PRICELARGE &&
-      `
-        font-size: ${typography.size.priceLarge};
-        font-weight: ${typography.weight.bold};
-        line-height: ${typography.lineHeight.price};
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        sup {
-          font-size: ${typography.size.priceLargeSup};
-          position: relative;
-          margin-top: 4px;
-          top: 0.5rem;
-        }
-    `}
-    ${(props)=> props.kind === KIND.PRICEMEDIUM &&
-      `
-        font-size: ${typography.size.priceMedium};
-        font-weight: ${typography.weight.bold};
-        line-height: ${typography.lineHeight.price};
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        sup {
-          font-size: ${typography.size.priceMediumSup};
-          position: relative;
-          top: 0.5rem;
-        }
-    `}
-    ${(props)=> props.kind === KIND.PRICESMALL &&
-      `
-        font-size: ${typography.size.priceSmall};
-        font-weight: ${typography.weight.bold};
-        line-height: ${typography.lineHeight.priceSmall};
-    `}
+    
     //text colors
     ${(props)=> props.color === COLOR.WAGRED && 
     `
@@ -233,14 +173,13 @@ export const WagText = ({
   `;
   
  return (
-      <WagText
+      <WagHeading
         {...props}
         kind={kind}
         color={props.color}
-        as={props.element}
       >
         {children}
-      </WagText>
+      </WagHeading>
 
       //
       //{kind:"AllowToggle" ? <WagAccordion allowToggle {...props}>{children} </WagAccordion> : null}
@@ -265,7 +204,7 @@ export const WagText = ({
 // export const WagButtonLink = () => {
 //   return <WagButton {...props} kind="link"></WagButton>;
 // };
-WagText.propTypes = {
+WagHeading.propTypes = {
   /**
    * Is this the principal call to action on the page?
    */
@@ -279,8 +218,7 @@ WagText.propTypes = {
    */
    kind: PropTypes.oneOf(["marketingLarge", "marketingMedium", 
    "marketingSmall", "marketingXSmall", "headingLarge", "headingMedium",
-   "headingSmall", "paragraph", "descriptor", "disclaimer", "priceLarge",
-   "priceMedium", "priceSmall",]),
+   "headingSmall"]),
    /**
     * What color is your text
     */
@@ -324,12 +262,12 @@ WagText.propTypes = {
    */
   // isLoading: PropTypes.bool,
 };
-WagText.defaultProps = {
+WagHeading.defaultProps = {
   // backgroundColor: color.navy,
-   kind: "paragraph",
+   kind: "marketingLarge",
    color: "textGray",
-   text: "Add Text",
-   element: null,
+   //text: "Add Text",
+   //element: null,
   //allowMultiple: undefined,
   //allowToggle: undefined,
 };
