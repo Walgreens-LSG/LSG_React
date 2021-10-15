@@ -45,6 +45,7 @@ function textGenerator(args){
       <WagHeading
         kind={args.kind}
         color={args.color}
+        as={args.as}
         isTruncated
       >
         {args.text}
@@ -56,6 +57,7 @@ function textGenerator(args){
       <WagHeading 
         kind={args.kind} 
         color={args.color}
+        as={args.as}
       >
         {args.text}
       </WagHeading>
@@ -72,6 +74,7 @@ Default.args = {
   kind: "marketingLarge",
   color: "textGray",
   truncated: false,
+  as: "h1"
 };
 
 export const Marketing_Large_Heading = () => (

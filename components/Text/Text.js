@@ -12,15 +12,6 @@ export const WagText = ({
   ...props 
 }) => {
     const KIND = {
-      //Marketing Headings
-      MARKETINGLARGE: "marketingLarge",
-      MARKETINGMEDIUM: "marketingMedium",
-      MARKETINGSMALL: "marketingSmall",
-      MARKETINGXSMALL: "marketingXSmall",
-      //Heading
-      HEADINGLARGE: "headingLarge",
-      HEADINGMEDIUM: "headingMedium",
-      HEADINGSMALL: "headingSmall",
       // General text
       PARAGRAPH: "paragraph",
       DESCRIPTOR: "descriptor",
@@ -60,45 +51,6 @@ export const WagText = ({
     font-family: ${typography.type.primary};   
     line-height: ${typography.lineHeight.marketing};
     // text type
-    ${(props)=> props.kind === KIND.MARKETINGLARGE &&
-      `
-        font-size: ${typography.size.marketingLarge};
-        font-weight: ${typography.weight.bold};
-    `}
-    ${(props)=> props.kind === KIND.MARKETINGMEDIUM &&
-      `
-        font-size: ${typography.size.marketingMedium};
-        font-weight: ${typography.weight.bold};
-    `}
-    ${(props)=> props.kind === KIND.MARKETINGSMALL &&
-      `
-        font-size: ${typography.size.marketingSmall};
-        font-weight: ${typography.weight.bold};
-    `}
-    ${(props)=> props.kind === KIND.MARKETINGXSMALL &&
-      `
-        font-size: ${typography.size.marketingXSmall};
-        font-weight: ${typography.weight.bold};
-        line-height: ${typography.lineHeight.marketingSmall};
-    `}
-    ${(props)=> props.kind === KIND.HEADINGLARGE &&
-      `
-        font-size: ${typography.size.headingLarge};
-        font-weight: ${typography.weight.bold};
-        line-height: ${typography.lineHeight.heading};
-    `}
-    ${(props)=> props.kind === KIND.HEADINGMEDIUM &&
-      `
-        font-size: ${typography.size.headingMedium};
-        font-weight: ${typography.weight.bold};
-        line-height: ${typography.lineHeight.heading};
-    `}
-    ${(props)=> props.kind === KIND.HEADINGSMALL &&
-      `
-        font-size: ${typography.size.headingSmall};
-        font-weight: ${typography.weight.bold};
-        line-height: ${typography.lineHeight.heading};
-    `}
     ${(props)=> props.kind === KIND.PARAGRAPH &&
       `
         font-size: ${typography.size.paragraph};
@@ -277,9 +229,7 @@ WagText.propTypes = {
   /**
    * What style of text are you using?
    */
-   kind: PropTypes.oneOf(["marketingLarge", "marketingMedium", 
-   "marketingSmall", "marketingXSmall", "headingLarge", "headingMedium",
-   "headingSmall", "paragraph", "descriptor", "disclaimer", "priceLarge",
+   kind: PropTypes.oneOf([ "paragraph", "descriptor", "disclaimer", "priceLarge",
    "priceMedium", "priceSmall",]),
    /**
     * What color is your text
@@ -330,6 +280,7 @@ WagText.defaultProps = {
    color: "textGray",
    text: "Add Text",
    element: null,
+   truncated: false,
   //allowMultiple: undefined,
   //allowToggle: undefined,
 };

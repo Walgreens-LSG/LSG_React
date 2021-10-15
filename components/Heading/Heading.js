@@ -8,6 +8,7 @@ import { render } from "react-dom";
 
 export const WagHeading = ({ 
   children,
+  truncated,
   kind,
   ...props 
 }) => {
@@ -47,7 +48,9 @@ export const WagHeading = ({
       DARKGRAY: 'darkGray',
       BLACK: 'black'
     };
-    
+    const TRUNCATED = {
+      ISTRUNCATED : true,
+    };
   const WagHeading = styled(Heading)`
     font-family: ${typography.type.primary};   
     line-height: ${typography.lineHeight.marketing};
@@ -170,6 +173,14 @@ export const WagHeading = ({
         color: ${color.black};
     `}
     
+    // truncation
+    ${(props) => props.truncated === TRUNCATED.ISTRUNCATED && 
+    `
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis !important;
+      white-space: nowrap;
+    `}
   `;
   
  return (
@@ -226,10 +237,9 @@ WagHeading.propTypes = {
    "seasonalPink", "seasonalOrange", 'valueYellow', "disabled", "gray", 
    "textGray", "darkGray", "black"]),
    /**
-    * You can overide the html output of this component
+    * What type of html header tag would you like this component to export
     */
-  //   element: PropTypes.oneOf(["i", "u", "abbr", "cite", "del", "em", "ins",
-  //  "kbd", "mark", "s", "samp", "sub", "sup"]),
+    as: PropTypes.oneOf(["h1", "h2", "h3", "h4", "h5", "h6",]),
   /**
    * Button contents
    */
@@ -266,7 +276,8 @@ WagHeading.defaultProps = {
    kind: "marketingLarge",
    color: "textGray",
    text: "Add Text",
-   element: null,
+   as: "h1",
+   truncated: false,
   //allowMultiple: undefined,
   //allowToggle: undefined,
 };

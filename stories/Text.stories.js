@@ -104,33 +104,6 @@ Default.args = {
   truncated: false,
 };
 
-export const Marketing_Large_Heading = () => (
-  <WagText kind="marketingLarge" color="denim">Hello, Healthy </WagText>
-);
-
-export const Marketing_Medium_Heading = () => (
-  <WagText kind="marketingMedium" color="denim">Hello, Healthy </WagText>
-);
-
-export const Marketing_Small_Heading = () => (
-  <WagText kind="marketingSmall" color="denim">Hello, Healthy </WagText>
-);
-
-export const Marketing_Extra_Small_Heading = () => (
-  <WagText kind="marketingXSmall" color="denim">Hello, Healthy </WagText>
-);
-
-export const Large_Heading = () => (
-  <WagText kind="headingLarge" color="denim">Hello, Healthy </WagText>
-);
-
-export const Medium_Heading = () => (
-  <WagText kind="headingMedium" color="denim">Hello, Healthy </WagText>
-);
-
-export const Small_Heading = () => (
-  <WagText kind="headingSmall" color="denim">Hello, Healthy </WagText>
-);
 
 export const Paragraph_Text = () => (
   <WagText kind="paragraph" color="textGray">
