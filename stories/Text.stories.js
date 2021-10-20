@@ -4,6 +4,7 @@ import React from "react";
 
 
 import { WagText } from "../components/Text/Text";
+import { Text } from "@chakra-ui/react";
 
 
 
@@ -83,12 +84,15 @@ function textGenerator(args){
   }
   else{
     return(
+      
       <WagText 
         kind={args.kind} 
         color={args.color}
+        as={args.element}
       >
         {args.text}
       </WagText>
+      
     );
   }
 
@@ -102,6 +106,7 @@ Default.args = {
   kind: "paragraph",
   color: "textGray",
   truncated: false,
+  element: 's'
 };
 
 

@@ -275,7 +275,7 @@ WagHeading.defaultProps = {
   // backgroundColor: color.navy,
    kind: "marketingLarge",
    color: "textGray",
-   text: "Add Text",
+   text: null,
    as: "h1",
    truncated: false,
   //allowMultiple: undefined,

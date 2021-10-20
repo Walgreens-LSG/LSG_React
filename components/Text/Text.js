@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
-import { Text, typography as Typography } from "@chakra-ui/react";
+import { Text  } from "@chakra-ui/react";
 import { color, typography, transition } from "../../assets/shared/variables.js";
 import { render } from "react-dom";
 
@@ -9,6 +9,7 @@ import { render } from "react-dom";
 export const WagText = ({ 
   children,
   kind,
+  element,
   ...props 
 }) => {
     const KIND = {
@@ -46,8 +47,24 @@ export const WagText = ({
       DARKGRAY: 'darkGray',
       BLACK: 'black'
     };
+    const ELEMENT = {
+      I: "i",
+      U: 'u',
+      ABBR: 'abbr',
+      CITE: 'cite',
+      DEL: 'del',
+      EM: 'em',
+      INS: 'ins',
+      KBD: 'kbd',
+      MARK: 'mark',
+      S: 's',
+      SAMP: 'samp',
+      SUB: 'sub',
+      SUP: 'sup',
+    };
     
   const WagText = styled(Text)`
+    
     font-family: ${typography.type.primary};   
     line-height: ${typography.lineHeight.marketing};
     // text type
@@ -241,8 +258,8 @@ WagText.propTypes = {
    /**
     * You can overide the html output of this component
     */
-  //   element: PropTypes.oneOf(["i", "u", "abbr", "cite", "del", "em", "ins",
-  //  "kbd", "mark", "s", "samp", "sub", "sup"]),
+    element: PropTypes.oneOf(["i", "u", "abbr", "cite", "del", "em", "ins",
+   "kbd", "mark", "s", "samp", "sub", "sup"]),
   /**
    * Button contents
    */
