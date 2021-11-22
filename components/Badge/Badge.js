@@ -1,17 +1,96 @@
 import React from "react";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
+import {color, alertColors} from "../../assets/shared/variables.js";
 import { 
   Badge, 
 } from "@chakra-ui/react";
+import{WagText} from "../Text/Text";
 
 export const WagBadge = ({ 
-  children, 
+  children,
+  kind, 
   ...props 
 }) => {
-  const WagBadge = styled(Badge)``;
+  const KIND = {
+    DENIM: "denim",
+    SKY: "sky",
+    WARNING: "warning",
+    CREME: "creme",
+    ERROR: "error",
+    PICKUP: 'pickup'
+  };
+  const WagBadge = styled(Badge)`
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    white-space:normal; 
+    p{
+     text-align:center;
+     text-transform: none;
+     font-size: 0.875rem;
+      width: 100%;
+    }
+    ${(props) => 
+      props.kind === KIND.DENIM &&
+    `
+      background: ${color.denim};
+      p{
+        color: ${color.white};
+      }
+    `}
+    ${(props) => 
+      props.kind === KIND.SKY &&
+    `
+      background: ${color.skyblue};
+      p{
+        color: ${color.denim};
+      }
+    `}
+    ${(props) => 
+      props.kind === KIND.WARNING &&
+    `
+      background: ${color.yellow};
+      color: ${color.denim};
+    `}
+    ${(props) => 
+      props.kind === KIND.CREME &&
+    `
+      background: ${color.cream};
+      p{
+        color: ${color.denim};
+      }
+    `}
+    ${(props) => 
+      props.kind === KIND.ERROR &&
+    `
+      background: ${alertColors.red};
+      p{
+        color: ${color.white};
+      }
+    `}
+    ${(props) => 
+      props.kind === KIND.PICKUP &&
+    `
+      background: ${color.pink};
+      p{
+        color: ${color.white};
+      }
+    `}
+  `;
   return (
-      <WagBadge {...props} > {children} </WagBadge>
+      <WagBadge 
+        kind={kind}
+        {...props} 
+      > 
+        <WagText kind="disclaimor"> 
+          {children} 
+        </WagText> 
+      </WagBadge>
   );
 };
 
@@ -25,9 +104,9 @@ WagBadge.propTypes = {
    */
   // backgroundColor: PropTypes.string,
   /**
-   * What type of button are you using?
+   * What type of badge are you using?
    */
-  // kind: PropTypes.oneOf(["primary", "secondary", "outline", "link"]),
+   kind: PropTypes.oneOf(["denim", "sky", "warning", "creme", "error", "pickup"]),
   /**
    * Button contents
    */
@@ -56,7 +135,7 @@ WagBadge.propTypes = {
 };
 WagBadge.defaultProps = {
   // backgroundColor: color.navy,
-  // kind: "primary",
+   kind: "denim",
   // onClick: undefined,
   // fullWidth: false,
   // isDisabled: false,
