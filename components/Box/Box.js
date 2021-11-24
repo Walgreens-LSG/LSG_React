@@ -9,9 +9,38 @@ export const WagBox = ({
   children, 
   ...props 
 }) => {
-  const WagBox = styled(Box)``;
+  const ORIENTATION = {
+    ROW: "row",
+    COLUMN: "column",
+    BLOCK: "block"
+  };
+  const WagBox = styled(Box)`
+    display: flex;
+    ${(props)=>
+    props.orientation === ORIENTATION.ROW &&
+    `
+      flex-direction: row;
+    `}
+    ${(props)=>
+    props.orientation === ORIENTATION.COLUMN &&
+    `
+      flex-direction: column;
+      gap: 8px;
+    `}
+    ${(props)=>
+    props.orientation === ORIENTATION.BLOCK&&
+    `
+      flex-direction: block;
+    `}
+  `;
   return (
-      <WagBox {...props} > {children} </WagBox>
+      <WagBox 
+        {...props}
+        orientation={props.orientation}
+        width={props.width} 
+      > 
+        {children} 
+      </WagBox>
   );
 };
 
@@ -25,9 +54,13 @@ WagBox.propTypes = {
    */
   // backgroundColor: PropTypes.string,
   /**
-   * What type of button are you using?
+   * What is the Box's default orientation
    */
-  // kind: PropTypes.oneOf(["primary", "secondary", "outline", "link"]),
+   orientation: PropTypes.oneOf(["column", "row", "default"]),
+  /**
+   * The width of the Box
+   */
+  width: PropTypes.string,
   /**
    * Button contents
    */
@@ -55,8 +88,8 @@ WagBox.propTypes = {
   // isLoading: PropTypes.bool,
 };
 WagBox.defaultProps = {
-  // backgroundColor: color.navy,
-  // kind: "primary",
+  orientation: "block",
+  width: "100px",
   // onClick: undefined,
   // fullWidth: false,
   // isDisabled: false,

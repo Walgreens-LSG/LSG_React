@@ -4,7 +4,7 @@ import React from "react";
 
 
 import { WagText } from "../components/Text/Text";
-import { Text } from "@chakra-ui/react";
+import { WagTextSpan } from "../components/Text/Text_Span";
 
 
 
@@ -113,6 +113,15 @@ Default.args = {
 export const Paragraph_Text = () => (
   <WagText kind="paragraph" color="textGray">
      CDC recommends a Pfizer-BioNTech booster shot at least 6 months 
+     after completion of the primary series for adults 65+ and certain 
+     at-risk individuals ages 18+.
+  </WagText>
+);
+
+export const Paragraph_With_Span_Text = () => (
+  <WagText kind="paragraph" color="textGray">
+     CDC recommends a <WagTextSpan color="denim">
+     Pfizer-BioNTech </WagTextSpan> booster shot at least 6 months 
      after completion of the primary series for adults 65+ and certain 
      at-risk individuals ages 18+.
   </WagText>

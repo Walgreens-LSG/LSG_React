@@ -15,6 +15,7 @@ export const WagCard = ({
     
   };
   const WagCard = styled(WagBox)`
+   width: fit-content;
    background: ${color.white};
    padding: 12px;
    border-radius: 8px;
@@ -27,7 +28,11 @@ export const WagCard = ({
    }
   `;
   return (
-      <WagCard></WagCard>
+      <WagCard
+        {...props}
+      >
+        { children }
+      </WagCard>
   );
 };
 
