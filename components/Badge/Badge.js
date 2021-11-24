@@ -7,6 +7,7 @@ import {
 } from "@chakra-ui/react";
 import{WagText} from "../Text/Text";
 
+
 export const WagBadge = ({ 
   children,
   kind, 
@@ -29,6 +30,12 @@ export const WagBadge = ({
     align-items: center;
     justify-content: space-evenly;
     white-space:normal; 
+
+    position: absolute;
+    top: 0px;
+    right:0px;
+    z-index: 5;
+
     p{
      text-align:center;
      text-transform: none;

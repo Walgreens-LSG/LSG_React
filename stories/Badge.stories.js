@@ -4,7 +4,8 @@ import React from "react";
 
 
 import { WagBadge } from "../components/Badge/Badge";
-
+import { WagCard } from "../components/Card/Card";
+import { WagBox } from "../components/Box/Box";
 
 //👇 This default export determines where your story goes in the story list
 export default {
@@ -24,11 +25,15 @@ export default {
 //👇 We create a “template” of how args map to rendering
 const Template = (args) => (
 
-    <WagBadge 
-      kind={args.kind}
-    >
-      {args.text}
-    </WagBadge>
+    <WagCard>
+      <WagBox width="200px" height="300px">
+        <WagBadge 
+          kind={args.kind}
+        >
+          {args.text}
+        </WagBadge>
+      </WagBox>
+    </WagCard>
 );
 
 function Example(args){
@@ -43,27 +48,63 @@ Default.args = {
 };
 
 export const Standard_Denim = () => (
-  <WagBadge> Delivery Options </WagBadge>
+  <WagCard>
+      <WagBox width="200px" height="200px">
+        <WagBadge>
+          Delivery Options
+        </WagBadge>
+      </WagBox>
+    </WagCard>
 );
 
 export const Standard_SkyBlue_Alt = () => (
-  <WagBadge kind="sky"> Delivery Options </WagBadge>
+  <WagCard>
+      <WagBox width="200px" height="200px">
+        <WagBadge kind="sky">
+          Delivery Options
+        </WagBadge>
+      </WagBox>
+    </WagCard>
 );
 
 export const Standard_Warning = () => (
-  <WagBadge kind="warning"> Delivery Options </WagBadge>
+  <WagCard>
+      <WagBox width="200px" height="200px">
+        <WagBadge kind="warning">
+          Delivery Options
+        </WagBadge>
+      </WagBox>
+    </WagCard>
 );
 
 export const Standard_Cream = () => (
-  <WagBadge kind="creme"> Delivery Options </WagBadge>
+  <WagCard>
+      <WagBox width="200px" height="200px">
+        <WagBadge kind="creme">
+          Delivery Options
+        </WagBadge>
+      </WagBox>
+    </WagCard>
 );
 
 export const Standard_Error = () => (
-  <WagBadge kind="error"> Delivery Options </WagBadge>
+  <WagCard>
+      <WagBox width="200px" height="200px">
+        <WagBadge kind="error">
+          Delivery Options
+        </WagBadge>
+      </WagBox>
+    </WagCard>
 );
 
 export const Standard_Pickup = () => (
-  <WagBadge kind="pickup"> Delivery Options </WagBadge>
+  <WagCard>
+      <WagBox width="200px" height="200px">
+        <WagBadge kind="pickup">
+          Delivery Options
+        </WagBadge>
+      </WagBox>
+    </WagCard>
 );
 
 

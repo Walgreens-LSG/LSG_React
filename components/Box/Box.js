@@ -16,6 +16,7 @@ export const WagBox = ({
   };
   const WagBox = styled(Box)`
     display: flex;
+    position: relative;
     ${(props)=>
     props.orientation === ORIENTATION.ROW &&
     `
