@@ -6,9 +6,10 @@ import {
   Badge, 
 } from "@chakra-ui/react";
 import{WagText} from "../Text/Text";
+import { WagBox } from "../Box/Box.js";
 
 
-export const WagBadge = ({ 
+export const WagFlag = ({ 
   children,
   kind, 
   ...props 
@@ -21,26 +22,43 @@ export const WagBadge = ({
     ERROR: "error",
     PICKUP: 'pickup'
   };
-  const WagBadge = styled(Badge)`
-    width: 70px;
-    height: 70px;
-    border-radius: 100%;
+  const WagFlag = styled(Badge)`
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+    border-radius: 0 8px 0 0;
+    width: 100%;
+    height: 100%;
+    max-height: 100px;
+    max-width: 100px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    white-space:normal; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 
     position: absolute;
-    top: -25px;
-    left:-25px;
-    z-index: 5;
+    top: -12px;
+    right: -12px;
+    z-index: 2;
 
-    p{
-     text-align:center;
-     text-transform: none;
-     font-size: 0.875rem;
-      width: 100%;
+    div{
+        height: 100%;
+        top: 10px;
+        left: 10px;
+    
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: center:
+        justify-content: space-between;
+    }
+
+    p{  
+        width: 50%;
+        white-space:normal;
+        line-height: 1.2;
+        text-align:right;
+        text-transform: none;
+        font-size: 0.875rem;
     }
     ${(props) => 
       props.kind === KIND.DENIM &&
@@ -90,18 +108,20 @@ export const WagBadge = ({
     `}
   `;
   return (
-      <WagBadge 
+      <WagFlag 
         kind={kind}
         {...props} 
       > 
-        <WagText kind="disclaimor"> 
-          {children} 
-        </WagText> 
-      </WagBadge>
+        <WagBox >
+            <WagText kind="disclaimor"> 
+                {children} 
+            </WagText>
+        </WagBox> 
+      </WagFlag>
   );
 };
 
-WagBadge.propTypes = {
+WagFlag.propTypes = {
   /**
    * Is this the principal call to action on the page?
    */
@@ -140,7 +160,7 @@ WagBadge.propTypes = {
    */
   // isLoading: PropTypes.bool,
 };
-WagBadge.defaultProps = {
+WagFlag.defaultProps = {
   // backgroundColor: color.navy,
    kind: "denim",
   // onClick: undefined,

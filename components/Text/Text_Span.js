@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { Text  } from "@chakra-ui/react";
 import { color, typography, transition } from "../../assets/shared/variables.js";
 import { render } from "react-dom";
-
+import { WagBox } from "../Box/Box.js";
 
 export const WagTextSpan = ({ 
   children,
@@ -36,7 +36,7 @@ export const WagTextSpan = ({
       BLACK: 'black'
     };
     
-  const WagTextSpan = styled(Text)`
+  const WagTextSpan = styled(WagBox)`
     
     font-family: ${typography.type.primary};   
     line-height: ${typography.lineHeight.marketing};
@@ -124,6 +124,7 @@ export const WagTextSpan = ({
   
  return (
       <WagTextSpan
+        as="span"
         {...props}
         color={props.color}
       >
@@ -200,7 +201,7 @@ WagTextSpan.propTypes = {
   /**
    * Does the text need to be truncated?
    */
-   truncated: PropTypes.bool,
+  //  truncated: PropTypes.bool,
   /**
    * Is the button disabled?
    */
@@ -215,8 +216,8 @@ WagTextSpan.defaultProps = {
    kind: "paragraph",
    color: "textGray",
    text: "Add Text",
-   element: null,
-   truncated: false,
+  //  element: null,
+  //  truncated: false,
   //allowMultiple: undefined,
   //allowToggle: undefined,
 };

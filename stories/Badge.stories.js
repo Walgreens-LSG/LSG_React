@@ -25,7 +25,7 @@ export default {
 //👇 We create a “template” of how args map to rendering
 const Template = (args) => (
 
-    <WagCard>
+    <WagCard kind="blank">
       <WagBox width="200px" height="300px">
         <WagBadge 
           kind={args.kind}
@@ -48,7 +48,7 @@ Default.args = {
 };
 
 export const Standard_Denim = () => (
-  <WagCard>
+  <WagCard kind="blank">
       <WagBox width="200px" height="200px">
         <WagBadge>
           Delivery Options
@@ -58,7 +58,7 @@ export const Standard_Denim = () => (
 );
 
 export const Standard_SkyBlue_Alt = () => (
-  <WagCard>
+  <WagCard kind="blank">
       <WagBox width="200px" height="200px">
         <WagBadge kind="sky">
           Delivery Options
@@ -68,7 +68,7 @@ export const Standard_SkyBlue_Alt = () => (
 );
 
 export const Standard_Warning = () => (
-  <WagCard>
+  <WagCard kind="blank">
       <WagBox width="200px" height="200px">
         <WagBadge kind="warning">
           Delivery Options
@@ -78,7 +78,7 @@ export const Standard_Warning = () => (
 );
 
 export const Standard_Cream = () => (
-  <WagCard>
+  <WagCard kind="blank">
       <WagBox width="200px" height="200px">
         <WagBadge kind="creme">
           Delivery Options
@@ -88,7 +88,7 @@ export const Standard_Cream = () => (
 );
 
 export const Standard_Error = () => (
-  <WagCard>
+  <WagCard kind="blank">
       <WagBox width="200px" height="200px">
         <WagBadge kind="error">
           Delivery Options
@@ -98,7 +98,7 @@ export const Standard_Error = () => (
 );
 
 export const Standard_Pickup = () => (
-  <WagCard>
+  <WagCard kind="blank">
       <WagBox width="200px" height="200px">
         <WagBadge kind="pickup">
           Delivery Options

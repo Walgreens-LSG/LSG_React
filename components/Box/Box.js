@@ -57,7 +57,7 @@ WagBox.propTypes = {
   /**
    * What is the Box's default orientation
    */
-   orientation: PropTypes.oneOf(["column", "row", "default"]),
+   orientation: PropTypes.oneOf(["column", "row", "block"]),
   /**
    * The width of the Box
    */

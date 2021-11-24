@@ -12,7 +12,8 @@ export const WagCard = ({
   ...props 
 }) => {
   const KIND = {
-    
+    BASIC: 'basic',
+    BLANK: 'blank'
   };
   const WagCard = styled(WagBox)`
    width: fit-content;
@@ -20,16 +21,29 @@ export const WagCard = ({
    padding: 12px;
    border-radius: 8px;
    flex-wrap: nowrap;
-   box-shadow: 0 1px 6px 1px rgb( 64 64 64 / 15%);
+   -webkit-transition: all 0.3s ease;
+   
 
-   &:focus, &:hover{
-    transition: .3s;
-    border: 1px solid ${color.stroke};
-   }
+   
+   
+   ${(props) =>
+      props.kind === KIND.BASIC &&
+    `
+      box-shadow: 0 1px 6px 1px rgb( 64 64 64 / 15%);
+      &:hover{
+        border: 1px solid ${color.stroke};
+      }
+    `}
+    ${(props) =>
+      props.kind === KIND.BLANK &&
+    `
+      border: 1px solid ${color.stroke};
+    `}
   `;
   return (
       <WagCard
         {...props}
+        kind={kind}
       >
         { children }
       </WagCard>
@@ -46,9 +60,9 @@ WagCard.propTypes = {
    */
   // backgroundColor: PropTypes.string,
   /**
-   * What type of badge are you using?
+   * What type of card are you using?
    */
-   //kind: PropTypes.oneOf(["denim", "sky", "warning", "creme", "error", "pickup"]),
+   kind: PropTypes.oneOf([ "basic", "blank"]),
   /**
    * Button contents
    */
@@ -77,7 +91,7 @@ WagCard.propTypes = {
 };
 WagCard.defaultProps = {
   // backgroundColor: color.navy,
-   //kind: "denim",
+   kind: "basic",
   // onClick: undefined,
   // fullWidth: false,
   // isDisabled: false,

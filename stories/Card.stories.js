@@ -25,7 +25,7 @@ export default {
 //👇 We create a “template” of how args map to rendering
 const Template = (args) => (
 
-    <WagCard></WagCard>
+    <WagCard kind={args.kind}></WagCard>
 );
 
 
