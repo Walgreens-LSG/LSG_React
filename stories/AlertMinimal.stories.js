@@ -12,7 +12,7 @@ import { WagCloseButton } from "../components/Alert/AlertCloseButton";
 
 //👇 This default export determines where your story goes in the story list
 export default {
-  title: "Components/ Alert Minimal",
+  title: "Components/Alerts/ Alert Minimal",
   component: WagAlertMinimal, 
   subcomponent: { WagAlertDescription },
   

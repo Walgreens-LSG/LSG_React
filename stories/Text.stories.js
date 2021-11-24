@@ -10,7 +10,7 @@ import { WagTextSpan } from "../components/Text/Text_Span";
 
 //👇 This default export determines where your story goes in the story list
 export default {
-  title: "Components/Text",
+  title: "Components/Text/Text",
   component: WagText,
    subcomponent: {  },
   argTypes: {

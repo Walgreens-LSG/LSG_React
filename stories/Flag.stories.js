@@ -8,7 +8,7 @@ import { WagBox } from "../components/Box/Box";
 
 //👇 This default export determines where your story goes in the story list
 export default {
-  title: "Components/Flag",
+  title: "Components/Badge/Flag",
   component: WagFlag,
    subcomponent: {  },
   argTypes: {
@@ -35,10 +35,6 @@ const Template = (args) => (
     </WagCard>
 );
 
-function Example(args){
-  
-
-}
 
 export const Default = Template.bind({});
 Default.args = {
@@ -46,16 +42,72 @@ Default.args = {
   kind: "denim"
 };
 
-// export const Standard_Denim = () => (
-//   <WagCard kind="blank">
-//       <WagBox width="200px" height="200px">
-//         <WagBadge>
-//           Delivery Options
-//         </WagBadge>
-//       </WagBox>
-//     </WagCard>
-// );
-
+export const Denim_Flag = () => (
+  <WagCard kind="blank">
+      <WagBox width="400px" height="200px">
+        <WagFlag
+          kind="denim"
+        >
+          Pickup today
+        </WagFlag>
+      </WagBox>
+    </WagCard>
+);
+export const Sky_Flag = () => (
+  <WagCard kind="blank">
+      <WagBox width="400px" height="200px">
+        <WagFlag
+          kind="sky"
+        >
+          Pickup today
+        </WagFlag>
+      </WagBox>
+    </WagCard>
+);
+export const Warning_Flag = () => (
+  <WagCard kind="blank">
+      <WagBox width="400px" height="200px">
+        <WagFlag
+          kind="warning"
+        >
+          Pickup today
+        </WagFlag>
+      </WagBox>
+    </WagCard>
+);
+export const Creme_Flag = () => (
+  <WagCard kind="blank">
+      <WagBox width="400px" height="200px">
+        <WagFlag
+          kind="creme"
+        >
+          Pickup today
+        </WagFlag>
+      </WagBox>
+    </WagCard>
+);
+export const Error_Flag = () => (
+  <WagCard kind="blank">
+      <WagBox width="400px" height="200px">
+        <WagFlag
+          kind="error"
+        >
+          Pickup today
+        </WagFlag>
+      </WagBox>
+    </WagCard>
+);
+export const Pickup_Flag = () => (
+  <WagCard kind="blank">
+      <WagBox width="400px" height="200px">
+        <WagFlag
+          kind="pickup"
+        >
+          Pickup today
+        </WagFlag>
+      </WagBox>
+    </WagCard>
+);
 
 
 

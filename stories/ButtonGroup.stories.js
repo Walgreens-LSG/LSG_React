@@ -13,7 +13,7 @@ import {
 
 //👇 This default export determines where your story goes in the story list
 export default {
-  title: "Components/Button Group",
+  title: "Components/Buttons/Button Group",
   component: WagButtonGroup,
   subcomponent: WagButton,
   decorators: [withKnobs],

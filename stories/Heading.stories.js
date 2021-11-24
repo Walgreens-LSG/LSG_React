@@ -10,7 +10,7 @@ import { Heading } from "@chakra-ui/react"
 
 //👇 This default export determines where your story goes in the story list
 export default {
-  title: "Components/Heading",
+  title: "Components/Text/Heading",
   component: WagHeading,
    subcomponent: {  },
   argTypes: {

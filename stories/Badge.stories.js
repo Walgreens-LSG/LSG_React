@@ -9,7 +9,7 @@ import { WagBox } from "../components/Box/Box";
 
 //👇 This default export determines where your story goes in the story list
 export default {
-  title: "Components/Badge",
+  title: "Components/Badge/Badge",
   component: WagBadge,
    subcomponent: {  },
   argTypes: {

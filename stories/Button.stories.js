@@ -7,7 +7,7 @@ import { WagButton } from "../components/Button/Button";
 
 //👇 This default export determines where your story goes in the story list
 export default {
-  title: "Components/Button",
+  title: "Components/Buttons/Button",
   component: WagButton,
   argTypes: {
     // backgroundColor: { control: 'color' },
