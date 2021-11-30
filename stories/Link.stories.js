@@ -6,6 +6,7 @@ import React from "react";
 import { WagLink } from "../components/Link/Link";
 import { WagText } from "../components/Text/Text";
 import { WagBox } from "../components/Box/Box";
+import { WagCard } from "../components/Card/Card";
 
 
 //👇 This default export determines where your story goes in the story list
@@ -28,6 +29,22 @@ const Template = (args) => (
 );
 
 function ExampleGenerator(args){
+  if(args.kind === ("default")){
+    return(
+      <WagLink
+        href={args.href}
+        isExternal={args.isExternal}
+      >
+        <WagCard>
+          <WagText 
+            kind="descriptor"
+          >
+            Default Link wrapped around card
+          </WagText>
+        </WagCard>
+      </WagLink>
+    );
+  }
   if(args.kind === ("underline") ){
     return(
       <WagLink kind="underline" href={args.href} isExternal={args.isExternal}>{args.text}</WagLink>
@@ -45,10 +62,25 @@ function ExampleGenerator(args){
 
 export const Default = Template.bind({});
 Default.args = {
-  kind:"underline",
+  kind:"default",
   text: "Refill Now",
   href:"https://walgreens.com"
 };
+
+export const General_Links = () => (
+  <WagLink
+    href="#!"
+    isExternal
+  >
+    <WagCard>
+      <WagText 
+        kind="descriptor"
+      >
+        Default Link wrapped around card
+      </WagText>
+    </WagCard>
+  </WagLink>
+);
 
 export const CTA = () => (
   <WagBox width="100%" orientation="column">
@@ -59,7 +91,13 @@ export const CTA = () => (
       "learn more", "Click here", "Get started".
     </WagText>
     <WagText>
-      <WagLink kind="CTA">Refill Now</WagLink>
+      <WagLink 
+        kind="CTA"
+        href="#!"
+        isExternal
+      >
+        Refill Now
+      </WagLink>
       </WagText>
   </WagBox>
 );
@@ -73,7 +111,13 @@ export const Inline = () => (
       link, the designer should use the Link CTA, displayed above.
     </WagText>
     <WagText>
-      <WagLink kind="inline">Paragraph Link</WagLink>
+      <WagLink 
+        kind="inline"
+        href="#!"
+        isExternal
+      >
+        Paragraph Link
+      </WagLink>
     </WagText>
   </WagBox>
 );
@@ -84,7 +128,13 @@ export const Underlined = () => (
       This component is used in the uncommon case of when a link is needed
       to be underlined for the sake of Accessibility.
     </WagText>
-      <WagLink kind="underline">Standalone link</WagLink>
+      <WagLink 
+        kind="underline"
+        href="#!"
+        isExternal
+      >
+        Standalone link
+      </WagLink>
   </WagBox>
 );
 

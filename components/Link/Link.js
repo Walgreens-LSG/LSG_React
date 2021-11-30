@@ -10,6 +10,7 @@ export const WagLink = ({
   ...props 
 }) => {
   const KIND = {
+   Default: 'default',
    CTA:"CTA",
    INLINE:"inline",
    UNDERLINE:"underline"
@@ -102,7 +103,7 @@ WagLink.propTypes = {
   /**
    * What kind of Link are you using
    */
-   kind: PropTypes.oneOf(["CTA", "inline", "underline"]),
+   kind: PropTypes.oneOf(["CTA", "inline", "underline", "default"]),
   /**
    * Link Text
    */
@@ -134,7 +135,7 @@ WagLink.propTypes = {
   // isLoading: PropTypes.bool,
 };
 WagLink.defaultProps = {
-    kind:"CTA",
+    kind:"default",
     href:"#!",
    isExternal: false,
    text:null
