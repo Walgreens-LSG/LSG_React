@@ -41,7 +41,7 @@ export const WagAlertMinimal = ({
     ${(props) =>
       props.kind === KIND.ERROR &&
       `
-      color: ${alertColors.red};
+      color: ${color.ruby};
     `}
     ${(props) =>
       props.kind === KIND.WARNING &&
