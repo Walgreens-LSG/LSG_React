@@ -2,7 +2,6 @@ import { propNames } from "@chakra-ui/react";
 import React from "react";
 
 
-
 import { WagLink } from "../components/Link/Link";
 import { WagText } from "../components/Text/Text";
 import { WagBox } from "../components/Box/Box";
